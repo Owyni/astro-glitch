@@ -1,0 +1,77 @@
+---
+import "../styles/global.css";
+import "../styles/glitch.css";
+---
+
+<section class="flex items-center justify-center min-h-screen p-6">
+    <div class="noise"></div>
+    <div class="scanline"></div>
+
+    <section class="max-w-4xl w-full text-center relative z-10">
+        <div
+            class="mb-6 inline-block border border-pink-500 px-3 py-1 text-xs tracking-widest text-pink-500 uppercase"
+        >
+            Hiring Status: Active [ERR_404_NOT_FOUND]
+        </div>
+
+        <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tighter">
+            <span class="glitch block" data-text="MARKETING GLITCH">
+                MARKETING GLITCH
+            </span>
+        </h1>
+
+        <p
+            class="text-xl md:text-2xl text-gray-400 mb-12 font-light max-w-2xl mx-auto leading-relaxed"
+        >
+            No buscamos publicistas tradicionales. Buscamos
+            <span class="text-white font-medium">disruptores digitales</span>
+            auténticos que rompan la simulación del marketing convencional.
+        </p>
+
+        <div class="mb-20 border-y border-white/10 py-6">
+            <div
+                class="mono text-[10px] text-center mb-4 text-gray-500 tracking-[0.5em] uppercase"
+            >
+                Tech Stack & Tools
+            </div>
+
+            <div class="tool-scroll">
+                <div class="tool-track">
+                    <div class="tool-item"><span>/</span> GOOGLE ADS</div>
+                    <div class="tool-item"><span>/</span> META BUSINESS</div>
+                    <div class="tool-item"><span>/</span> TIKTOK ADS</div>
+                    <div class="tool-item"><span>/</span> INSTAGRAM</div>
+                    <div class="tool-item"><span>/</span> YOUTUBE SHORTS</div>
+                    <div class="tool-item"><span>/</span> CANVA</div>
+                    <div class="tool-item"><span>/</span> ADOBE CC</div>
+
+                    <!-- duplicado -->
+                    <div class="tool-item"><span>/</span> GOOGLE ADS</div>
+                    <div class="tool-item"><span>/</span> META BUSINESS</div>
+                    <div class="tool-item"><span>/</span> TIKTOK ADS</div>
+                    <div class="tool-item"><span>/</span> INSTAGRAM</div>
+                    <div class="tool-item"><span>/</span> YOUTUBE SHORTS</div>
+                    <div class="tool-item"><span>/</span> CANVA</div>
+                    <div class="tool-item"><span>/</span> ADOBE CC</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <a href="/#contact" class="btn-glitch inline-block">
+                Únete al equipo
+            </a>
+        </div>
+    </section>
+
+    <script is:inline>
+        setInterval(() => {
+            if (Math.random() > 0.95) {
+                document.body.style.filter = "invert(1)";
+                setTimeout(() => {
+                    document.body.style.filter = "none";
+                }, 50);
+            }
+        }, 1000);
+    </script>
+</section>

@@ -4,9 +4,10 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Glitch | Redefiniendo el error">
+<Layout>
 	<Header />
 
+	<div class="noise"></div>
 	<!-- Sección Hero -->
 	<header
 		class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative pt-20"
@@ -68,26 +69,24 @@ import Footer from "../components/Footer.astro";
 	</header>
 
 	<!-- Sección About Us -->
-	<section id="about" class="py-24 px-6 bg-white/5 border-y border-white/5">
-		<div class="">
-			<div>
+	<section
+		id="about"
+		class="py-24 px-6 bg-white/5 border-y border-white/5 flex flex-col justify-center items-center"
+	>
+		<div>
+			<div class="">
 				<h2
 					class="heading-font text-3xl mb-8 border-l-4 border-cyan-500 pl-6"
 				>
 					Nuestra Filosofía
 				</h2>
-				<div class="space-y-6 text-gray-300">
+				<div class="text-xl text-gray-300 text-left leading-relaxed">
 					<p>
 						La organización <strong>GLITCH</strong> nace de la mala programación
 						de un sistema.
 						<br />
-						<br />
 						Creemos que la perfección es estática, mientras que el error
 						es progreso.
-					</p>
-					<p>
-						Damos solucion a problemas modernos, utilizando el ruido
-						digital como nuestra principal herramienta.
 					</p>
 				</div>
 			</div>
@@ -95,14 +94,14 @@ import Footer from "../components/Footer.astro";
 	</section>
 
 	<!-- Sección de Servicios -->
-	<section id="services" class="py-44 px-6">
+	<section id="services" class="py-48 px-6">
 		<div class="max-w-6xl mx-auto">
 			<div class="text-center mb-20">
 				<h2
 					class="heading-font text-4xl mb-4 glitch"
-					data-text="EQUIPOS"
+					data-text="CONOCE LOS EQUIPOS"
 				>
-					Equipos
+					CONOCE LOS EQUIPOS
 				</h2>
 				<p class="text-gray-500">Nuestras líneas de interferencia</p>
 			</div>
@@ -122,6 +121,13 @@ import Footer from "../components/Footer.astro";
 					<p class="text-gray-400 text-sm leading-relaxed mb-6">
 						Desarrollo de software con código limpio y alma rebelde.
 					</p>
+					<p>
+						<span
+							class="text-cyan-500 text-xs font-bold uppercase tracking-widest group-hover:text-white transition-colors duration-300"
+						>
+							Más información →
+						</span>
+					</p>
 					<div
 						class="h-1 w-0 bg-cyan-500 group-hover:w-full transition-all duration-500"
 					>
@@ -131,9 +137,9 @@ import Footer from "../components/Footer.astro";
 				<!-- Tarjeta 2 -->
 				<a
 					href="marketing/index.html"
-					class="card-glitch border border-white/10 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+					class="card-glitch border border-white/10 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group block"
 				>
-					<div class="text-magenta-500 mb-6 heading-font text-xl">
+					<div class="mb-6 heading-font text-xl">
 						02 // Visual Team
 					</div>
 					<h3 class="text-2xl font-bold mb-4">Diseño de Ruido</h3>
@@ -141,8 +147,15 @@ import Footer from "../components/Footer.astro";
 						Identidades visuales que vibran. Estética glitch
 						aplicada a marcas que buscan no pasar desapercibidas.
 					</p>
+					<p>
+						<span
+							class="text-xs font-bold uppercase tracking-widest group-hover:text-white transition-colors duration-300"
+						>
+							Más información →
+						</span>
+					</p>
 					<div
-						class="h-1 w-0 bg-magenta-500 group-hover:w-full transition-all duration-500"
+						class="h-1 w-0 bg-white/50 group-hover:w-full transition-all duration-500"
 					>
 					</div>
 				</a>
@@ -150,9 +163,9 @@ import Footer from "../components/Footer.astro";
 				<!-- Tarjeta 3 -->
 				<a
 					href="social/index.html"
-					class="card-glitch border border-white/10 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+					class="card-glitch border border-white/10 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group block"
 				>
-					<div class="text-yellow-500 mb-6 heading-font text-xl">
+					<div class="text-[#ff00c1] mb-6 heading-font text-xl">
 						03 // Social Glitch
 					</div>
 					<h3 class="text-2xl font-bold mb-4">Impacto Social</h3>
@@ -160,8 +173,15 @@ import Footer from "../components/Footer.astro";
 						El error que el sistema necesitaba.
 						<br />Fuera de la pantalla, dentro de la comunidad.
 					</p>
+					<p>
+						<span
+							class="text-[#ff00c1] text-xs font-bold uppercase tracking-widest group-hover:text-white transition-colors duration-300"
+						>
+							Más información →
+						</span>
+					</p>
 					<div
-						class="h-1 w-0 bg-yellow-500 group-hover:w-full transition-all duration-500"
+						class="h-1 w-0 bg-[#ff00c1] group-hover:w-full transition-all duration-500"
 					>
 					</div>
 				</a>
@@ -169,26 +189,80 @@ import Footer from "../components/Footer.astro";
 		</div>
 	</section>
 
+	<!-- Sección de Contacto -->
+	<section id="contact" class="py-44 px-6">
+		<div class="max-w-4xl mx-auto text-center">
+			<h2 class="heading-font text-4xl mb-8">Establecer Conexión</h2>
+			<div class="bg-white/5 p-10 border border-white/10">
+				<form id="contact-form" class="grid grid-cols-1 gap-6">
+					<div class="text-left">
+						<label
+							class="block text-xs uppercase tracking-widest text-gray-500 mb-2"
+						>
+							Identificador
+						</label>
+						<input
+							type="text"
+							name="user_name"
+							id="user_name"
+							required
+							minlength="2"
+							class="w-full bg-black border border-white/20 p-4 focus:border-cyan-500 outline-none transition-all"
+							placeholder="USER_NAME"
+						/>
+					</div>
+
+					<div class="text-left">
+						<label
+							class="block text-xs uppercase tracking-widest text-gray-500 mb-2"
+						>
+							Canal de respuesta
+						</label>
+						<input
+							type="email"
+							name="user_email"
+							id="user_email"
+							required
+							class="w-full bg-black border border-white/20 p-4 focus:border-cyan-500 outline-none transition-all"
+							placeholder="user@mail.com"
+						/>
+					</div>
+
+					<div class="text-left">
+						<label
+							class="block text-xs uppercase tracking-widest text-gray-500 mb-2"
+						>
+							Mensaje
+						</label>
+						<textarea
+							name="message"
+							id="message"
+							rows="4"
+							required
+							minlength="10"
+							class="w-full bg-black border border-white/20 p-4 focus:border-cyan-500 outline-none transition-all"
+							placeholder="Escribe aquí..."></textarea>
+					</div>
+
+					<!-- Honeypot (trampa anti-bots invisible) -->
+					<input
+						type="text"
+						name="website"
+						id="website"
+						class="hidden"
+					/>
+
+					<button
+						type="submit"
+						id="submit-btn"
+						class="btn-glitch w-full py-4 text-sm font-bold uppercase tracking-[0.3em]"
+					>
+						Transmitir Datos
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
 	<Footer />
-
-	<script is:inline>
-		setInterval(() => {
-			const cards = document.querySelectorAll(".card-glitch");
-			const randomCard = cards[Math.floor(Math.random() * cards.length)];
-			randomCard.style.opacity = "0.7";
-			setTimeout(() => (randomCard.style.opacity = "1"), 50);
-		}, 3000);
-
-		const slider = document.getElementById("slider");
-		let index = 0;
-		const totalSlides = slider.children.length;
-
-		setInterval(() => {
-			index = (index + 1) % totalSlides;
-			slider.style.transform = `translateX(-${index * 100}%)`;
-		}, 4000);
-
-		slider.style.filter = "contrast(200%)";
-		setTimeout(() => (slider.style.filter = ""), 100);
-	</script>
 </Layout>
