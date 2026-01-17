@@ -1,9 +1,42 @@
+@import "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap";
 @import "tailwindcss";
 
 :root {
-    --glitch-color: #00fff2;
-    --glitch-color-2: #ff00c1;
+    --glitch-blue: #00fff2;
+    --glitch-red: #ff00c1;
     --bg-color: #080808;
+}
+
+/* Animaciones globales */
+/* Ruido decorativo de fondo */
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.scanline {
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 249, 0.1);
+    position: absolute;
+    animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
 }
 
 body {
@@ -37,16 +70,47 @@ body {
 
 .glitch::before {
     left: 2px;
-    text-shadow: -2px 0 var(--glitch-color);
+    text-shadow: -2px 0 var(--glitch-blue);
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
 .glitch::after {
     left: -2px;
-    text-shadow: -2px 0 var(--glitch-color-2);
+    text-shadow: -2px 0 var(--glitch-red);
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+/* Animación de Glitch para Texto */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--glitch-red);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--glitch-blue);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-text 5s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-anim {
@@ -86,27 +150,32 @@ body {
     }
 }
 
-/* --- Superposición de Ruido --- */
-.noise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 50;
+@keyframes glitch-anim-text {
+    0% {
+        clip: rect(65px, 9999px, 100px, 0);
+    }
+
+    10% {
+        clip: rect(52px, 9999px, 31px, 0);
+    }
+
+    20% {
+        clip: rect(70px, 9999px, 20px, 0);
+    }
+
+    100% {
+        clip: rect(2px, 9999px, 90px, 0);
+    }
 }
 
 .card-glitch:hover {
-    border-color: var(--glitch-color);
-    box-shadow: 0 0 15px var(--glitch-color);
+    border-color: var(--glitch-blue);
+    box-shadow: 0 0 15px var(--glitch-blue);
     transform: skewX(-2deg);
     transition: all 0.2s ease;
 }
 
-.btn-glitch {
+.btn-glitch-index {
     background: transparent;
     border: 1px solid #fff;
     padding: 10px 20px;
@@ -115,39 +184,16 @@ body {
     overflow: hidden;
 }
 
-.btn-glitch:hover {
+.btn-glitch-index:hover {
     background: #fff;
     color: var(--bg-color);
-    box-shadow: 4px 0 var(--glitch-color), -4px 0 var(--glitch-color-2);
-}
-
-.btn-glitch::after {
-    content: 'UNETE_';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--glitch-red);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.1s;
-}
-
-.btn-glitch:hover::after {
-    animation: glitch-btn 0.3s infinite;
-    opacity: 1;
+    box-shadow: 4px 0 var(--glitch-blue), -4px 0 var(--glitch-red);
 }
 
 /* Desplazamiento suave */
 html {
     scroll-behavior: smooth;
 }
-
-/* CSS marketing */
 
 /* Animación de Línea de Herramientas */
 .tool-scroll {
@@ -184,4 +230,72 @@ html {
 
 .tool-item:hover {
     color: var(--glitch-blue);
+}
+
+/* Estilo del Botón Glitch */
+.btn-glitch-marketing {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 1px solid var(--glitch-blue);
+    color: var(--glitch-blue);
+    letter-spacing: 3px;
+    line-height: 1;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-glitch-marketing:hover {
+    background-color: var(--glitch-blue);
+    color: black;
+    box-shadow: 0 0 20px var(--glitch-blue);
+}
+
+.btn-glitch-marketing::after {
+    content: 'UNETE_';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--glitch-red);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.btn-glitch-marketing:hover::after {
+    animation: glitch-btn 0.3s infinite;
+    opacity: 1;
+}
+
+@keyframes glitch-btn {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-3px, 3px);
+    }
+
+    40% {
+        transform: translate(-3px, -3px);
+    }
+
+    60% {
+        transform: translate(3px, 3px);
+    }
+
+    80% {
+        transform: translate(3px, -3px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }
