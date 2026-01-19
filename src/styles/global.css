@@ -175,7 +175,7 @@ body {
     transition: all 0.2s ease;
 }
 
-.btn-glitch-index {
+.btn-glitch {
     background: transparent;
     border: 1px solid #fff;
     padding: 10px 20px;
@@ -184,7 +184,7 @@ body {
     overflow: hidden;
 }
 
-.btn-glitch-index:hover {
+.btn-glitch:hover {
     background: #fff;
     color: var(--bg-color);
     box-shadow: 4px 0 var(--glitch-blue), -4px 0 var(--glitch-red);
@@ -233,7 +233,7 @@ html {
 }
 
 /* Estilo del Botón Glitch */
-.btn-glitch-marketing {
+.btn-glitch-animado {
     padding: 12px 30px;
     font-size: 1.2rem;
     background: transparent;
@@ -247,13 +247,13 @@ html {
     text-transform: uppercase;
 }
 
-.btn-glitch-marketing:hover {
+.btn-glitch-animado:hover {
     background-color: var(--glitch-blue);
     color: black;
     box-shadow: 0 0 20px var(--glitch-blue);
 }
 
-.btn-glitch-marketing::after {
+.btn-glitch-animado::after {
     content: 'UNETE_';
     position: absolute;
     top: 0;
@@ -269,7 +269,7 @@ html {
     transition: opacity 0.1s;
 }
 
-.btn-glitch-marketing:hover::after {
+.btn-glitch-animado:hover::after {
     animation: glitch-btn 0.3s infinite;
     opacity: 1;
 }
