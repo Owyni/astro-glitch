@@ -51,38 +51,24 @@ body {
     text-transform: uppercase;
 }
 
+/* Diseño de Texto */
+.neon-text {
+    color: #00f7ff;
+    text-shadow:
+        0 0 10px rgba(0, 247, 255, 0.8),
+        0 0 20px rgba(0, 247, 255, 0.6),
+        0 0 30px rgba(0, 247, 255, 0.4);
+}
+
+.neon-red {
+    color: #ff0055;
+    text-shadow:
+        0 0 10px rgba(255, 0, 85, 0.8),
+        0 0 20px rgba(255, 0, 85, 0.6),
+        0 0 30px rgba(255, 0, 85, 0.4);
+}
+
 /* --- Animación de Efecto Glitch --- */
-.glitch {
-    position: relative;
-    display: inline-block;
-}
-
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color);
-}
-
-.glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 var(--glitch-blue);
-    clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-anim 5s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-    left: -2px;
-    text-shadow: -2px 0 var(--glitch-red);
-    clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-anim2 5s infinite linear alternate-reverse;
-}
-
-/* Animación de Glitch para Texto */
 .glitch-text {
     position: relative;
     display: inline-block;
@@ -101,16 +87,16 @@ body {
 
 .glitch-text::before {
     left: 2px;
-    text-shadow: -2px 0 var(--glitch-red);
+    text-shadow: -2px 0 var(--glitch-blue);
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
 .glitch-text::after {
     left: -2px;
-    text-shadow: -2px 0 var(--glitch-blue);
+    text-shadow: -2px 0 var(--glitch-red);
     clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-anim-text 5s infinite linear alternate-reverse;
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-anim {
@@ -298,4 +284,65 @@ html {
     100% {
         transform: translate(0);
     }
+}
+
+/* Diseño de tarjetas */
+.glass-card {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glitch-blue);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.glass-card:hover::before {
+    left: 100%;
+}
+
+.glass-card:hover {
+    border-color: var(--glitch-blue);
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 20px var(--glitch-red),
+        0 0 40px rgba(0, 247, 255, 0.3),
+        0 10px 30px -15px var(--glitch-red);
+    animation: glitch 0.3s ease;
+}
+
+.glass-card {
+    height: 100%;
+}
+
+.tech-badge {
+    background: rgba(255, 0, 85, 0.15);
+    color: #ff0055;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255, 0, 85, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: rgba(0, 247, 255, 0.2);
+    color: #00f7ff;
+    border-color: #00f7ff;
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+/* Fuente */
+.mono {
+    font-family: 'Fira Code', monospace;
 }
