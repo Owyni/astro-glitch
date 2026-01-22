@@ -5,6 +5,6 @@ image: "owynn.png"
 ---
 
 ### 💻 Especialista en Desarrollo Web  
-🚀 **Creador del grupo *Glitch***  
+🚀 **Creador de grupo *Glitch***  
 
 ✨ Actitud **extrovertida** y **proactiva**.

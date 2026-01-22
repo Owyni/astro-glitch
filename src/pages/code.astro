@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TechStack from "../components/TechStack.astro";
+import Footer from "../components/Footer.astro";
 import Stats from "../components/stats.astro";
 import MemberCard from "../components/MemberCard.astro";
 import { getCollection } from "astro:content";
@@ -34,3 +36,6 @@ const members = await getCollection("members");
         </div>
     </section>
 </Layout>
+<TechStack />
+<div class="h-20"></div>
+<Footer />
