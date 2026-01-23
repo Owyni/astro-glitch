@@ -154,13 +154,6 @@ body {
     }
 }
 
-.card-glitch:hover {
-    border-color: var(--glitch-blue);
-    box-shadow: 0 0 15px var(--glitch-blue);
-    transform: skewX(-2deg);
-    transition: all 0.2s ease;
-}
-
 .btn-glitch {
     background: transparent;
     border: 1px solid #fff;
@@ -323,6 +316,10 @@ html {
 
 .glass-card {
     height: 100%;
+}
+
+.team-card:hover {
+    transform: scale(1.03);
 }
 
 .tech-badge {
